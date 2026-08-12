@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+*.egg-info/
+.pytest_cache/
+
+# Env
+.env
+
+# Node
+node_modules/
+dist/
+
+# SQLite (disposable cache — safe to delete, rebuilds on demand)
+*.db
+
+# OS
+.DS_Store

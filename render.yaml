@@ -1,0 +1,38 @@
+# Render Blueprint — deploys both services from one file.
+# https://render.com/docs/blueprint-spec
+#
+# Service names below are hardcoded into each other's URLs (CORS_ORIGINS,
+# VITE_API_BASE_URL) rather than using Render's fromService cross-service
+# reference syntax — this wasn't tested against a live deploy (no Render
+# account access from the sandbox this was built in), and a predictable,
+# inspectable URL felt like the safer bet than an interpolation
+# mechanism I couldn't verify end-to-end. If "songbook-backend" or
+# "songbook-frontend" is already taken globally on Render, it'll assign
+# a different name — update both envVars below to match if so.
+
+services:
+  - type: web
+    name: songbook-backend
+    runtime: docker
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: YOUTUBE_API_KEY
+        sync: false # prompted for in the Render dashboard, never stored in the repo
+      - key: ANTHROPIC_API_KEY
+        sync: false # optional — translation feature only, everything else works without it
+      - key: APP_ENV
+        value: production
+      - key: CORS_ORIGINS
+        value: '["https://songbook-frontend.onrender.com"]'
+
+  - type: web
+    name: songbook-frontend
+    runtime: static
+    buildCommand: cd frontend && npm install && npm run build
+    staticPublishPath: ./frontend/dist
+    envVars:
+      - key: VITE_API_BASE_URL
+        value: https://songbook-backend.onrender.com

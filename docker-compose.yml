@@ -1,0 +1,16 @@
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./backend/.env
+    volumes:
+      - ./backend/app:/app/app
+
+# The frontend isn't containerized on purpose: Vite's dev server (npm run
+# dev) already gives fast hot-reload with zero setup, and Docker adds
+# volume-mount and file-watching friction for that workflow, especially
+# on Windows, without much benefit for local dev. Production deploys the
+# frontend as a static build (npm run build -> dist/), not a running
+# container — see the README for both.

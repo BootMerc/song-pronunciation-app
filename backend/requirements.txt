@@ -1,0 +1,12 @@
+fastapi==0.141.1
+uvicorn[standard]==0.52.1
+pydantic-settings==2.14.2
+python-dotenv==1.2.2
+httpx==0.28.1
+cutlet==0.5.2
+unidic-lite==1.0.8
+pypinyin==0.55.0
+korean_romanizer==0.28.0
+pyicu==2.16.2
+indic_transliteration==2.3.82
+phonemizer==3.4.0
