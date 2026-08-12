@@ -456,12 +456,6 @@ docker compose up --build
 
 Same endpoints, same port.
 
-## Git
-
-No repo initialized yet on purpose — run `git init` and set your own
-`user.name`/`user.email` before your first commit, so authorship is
-correct from the start this time.
-
 ## Roadmap
 
 - [x] Step 1 — backend skeleton (FastAPI, config, health check, Docker)
