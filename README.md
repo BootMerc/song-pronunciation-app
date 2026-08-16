@@ -183,21 +183,6 @@ Add `ANTHROPIC_API_KEY` to `backend/.env` — get one from [console.anthropic.co
 
 ---
 
-## Deployment
-
-One-step via Render Blueprint:
-
-1. Push to GitHub (private repo recommended)
-2. Render dashboard → New → Blueprint → connect repo
-3. Render reads `render.yaml` and creates both services
-4. Set `YOUTUBE_API_KEY` in the backend service's environment variables
-5. Optionally set `ANTHROPIC_API_KEY` for translation
-
-**Verify URLs after first deploy.** `render.yaml` hardcodes `Lyrica-backend` and `Lyrica-frontend` as service names. If either name is taken and Render assigns a different URL, update `CORS_ORIGINS` (backend) and `VITE_API_BASE_URL` (frontend) to match, then trigger a manual redeploy on the frontend.
-
-**Running cost: $0/month.** YouTube Data API, LRCLIB, espeak-ng, and Render's free tier are all genuinely free. The only possible cost is the Anthropic API for translation — approximately $0.001 per song at Haiku pricing, billed only when the translate button is clicked.
-
----
 
 ## Known limitations
 
