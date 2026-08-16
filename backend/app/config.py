@@ -4,11 +4,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 class Settings(BaseSettings):
     """Application configuration, loaded from environment variables or a .env file.
 
-    Kept intentionally small right now — fields get added in later steps
-    alongside the code that actually consumes them (e.g. YOUTUBE_API_KEY
-    lands with the YouTube client), rather than declared speculatively.
-    """
-
+    Kept intentionally small right now """
     model_config = SettingsConfigDict(
         env_file=".env", env_file_encoding="utf-8", extra="ignore"
     )
