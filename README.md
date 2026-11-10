@@ -5,9 +5,7 @@
 ![Python](https://img.shields.io/badge/Python-3.12-blue?style=flat-square)
 ![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react&logoColor=black)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.141-009688?style=flat-square)
-![Tests](https://img.shields.io/badge/tests-143%20passing-brightgreen?style=flat-square)
 ![Cost](https://img.shields.io/badge/running%20cost-%240%2Fmonth-success?style=flat-square)
-![Render](https://img.shields.io/badge/deployed%20on-Render-46E3B7?style=flat-square)
 
 Paste a song title and artist (or a YouTube link). Get back the original lyrics, a proper romanization, an English-friendly phonetic guide, and an optional English translation — synced to video playback when timing data is available.
 
